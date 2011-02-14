@@ -18,6 +18,9 @@ try:
     import desktopcouch
 except ImportError:
     desktopcouch = None
+except BaseException as(ex):
+    print type(ex), ex
+    desktopcouch = None
 
 
 from couchapp.errors import ResourceNotFound, AppError

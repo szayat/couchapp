@@ -14,6 +14,9 @@ try:
     import desktopcouch
 except ImportError:
     desktopcouch = None
+except BaseException as(ex):
+    print type(ex), ex
+    desktopcouch = None
 
 from .restkit import Resource, ClientResponse, ResourceError, request
 from .restkit import util
